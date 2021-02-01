@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { Field } from "./Field"
+
 export const App: FC<unknown> = () => {
-    return <h1>TEST</h1>;
+    return <Field height={10} width={30} />;
 };
