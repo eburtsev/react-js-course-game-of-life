@@ -16,7 +16,7 @@ export class Field extends Component<Props, FieldState> {
     };
 
     private handleClick = (x, y) => {
-        const field: boolean[][] = [...this.state.field];
+        const field: boolean[][] = this.state.field.map((row) => [...row]);
         field[x][y] = !field[x][y];
         this.setState({ field });
     };
