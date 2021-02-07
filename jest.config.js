@@ -6,8 +6,8 @@ module.exports = {
     coverageDirectory: "coverage",
     testEnvironment: "jsdom",
     transform: {
-        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest"
+        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
     },
     moduleDirectories: ["node_modules", "src"],
-    setupFilesAfterEnv: ["<rootDir>.jest/setupTests.js"]
+    setupFilesAfterEnv: ["<rootDir>.jest/setupTests.js"],
 };
