@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { number, withKnobs } from "@storybook/addon-knobs";
 import { Field } from "./Field";
 
 export default {
@@ -9,4 +9,4 @@ export default {
     decorators: [withKnobs],
 } as Meta;
 
-export const FieldDefault: Story<unknown> = () => <Field height={number("height", 4)} width={number("width", 6)} />;
+export const FieldDefault: Story = () => <Field height={number("height", 4)} width={number("width", 6)} />;

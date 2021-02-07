@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "npx webpack serve --mode development --hot",
-        "build": "npx webpack --mode production",
+        "start": "webpack serve --mode development --hot",
+        "build": "webpack --mode production",
         "lint": "npx eslint --ext .js,.jsx,.ts,.tsx,.json --fix ./src *.json ./.jest ./.storybook",
         "test": "npx jest",
         "storybook": "start-storybook -p 6006",
@@ -27,6 +27,7 @@
     "homepage": "https://github.com/eburtsev/react-js-course-game-of-life#readme",
     "devDependencies": {
         "@babel/core": "^7.12.10",
+        "@babel/plugin-proposal-class-properties": "^7.12.13",
         "@babel/plugin-transform-runtime": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
         "@babel/preset-react": "^7.12.10",
@@ -54,14 +55,16 @@
         "jest": "^26.6.3",
         "loki": "^0.27.0",
         "prettier": "^2.2.1",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
+        "react-test-renderer": "^17.0.1",
         "typescript": "^4.1.3",
         "webpack": "^5.17.0",
         "webpack-cli": "^4.4.0",
         "webpack-dev-server": "^3.11.2"
     },
-    "dependencies": {},
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
     "husky": {
         "hooks": {
             "pre-commit": "npm run pre-commit"

@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from "react";
+import React, { FC } from "react";
 
 interface CellProps {
     x: number;
@@ -7,19 +7,20 @@ interface CellProps {
     onClick: (x: number, y: number) => void;
 }
 
-export const Cell: FC<PropsWithChildren<CellProps>> = ({ x, y, clicked = false, onClick, children }) => {
-    const style = {
-        display: "inline-block",
-        height: "3em",
-        width: "3em",
-        border: "#AAAAAA solid 1px",
-        color: "#555555",
-        margin: "1px",
-        verticalAlign: "top",
-    };
+const style = {
+    display: "inline-block",
+    height: "3em",
+    width: "3em",
+    border: "#AAAAAA solid 1px",
+    color: "#555555",
+    margin: "1px",
+    verticalAlign: "top",
+};
+
+export const Cell: FC<CellProps> = ({ x, y, clicked = false, onClick }) => {
     return (
         <div id={`Cell_${x}_${y}`} style={style} onClick={() => onClick(x || 0, y || 0)}>
-            <div>{clicked ? `${x}/${y}` : ""}</div>
+            {clicked ? `${x}/${y}` : ""}
         </div>
     );
 };

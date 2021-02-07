@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell tests Clicked cell 1`] = `
+<div
+  id="Cell_4_7"
+  onClick={[Function]}
+  style={
+    Object {
+      "border": "#AAAAAA solid 1px",
+      "color": "#555555",
+      "display": "inline-block",
+      "height": "3em",
+      "margin": "1px",
+      "verticalAlign": "top",
+      "width": "3em",
+    }
+  }
+>
+  4/7
+</div>
+`;
+
+exports[`Cell tests Default cell 1`] = `
+<div
+  id="Cell_4_7"
+  onClick={[Function]}
+  style={
+    Object {
+      "border": "#AAAAAA solid 1px",
+      "color": "#555555",
+      "display": "inline-block",
+      "height": "3em",
+      "margin": "1px",
+      "verticalAlign": "top",
+      "width": "3em",
+    }
+  }
+>
+  
+</div>
+`;
