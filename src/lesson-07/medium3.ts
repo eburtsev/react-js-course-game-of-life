@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type FIXME = any;
+type FIXME_ELEMENT_TYPE = Exclude<OrderState, "buyingSupplies"> & Exclude<OrderState, "producing">;
+type FIXME = FIXME_ELEMENT_TYPE[];
 
 const orderStates = [
   "initial",
@@ -15,4 +16,4 @@ type OrderState = typeof orderStates[number];
 export const getUserOrderStates = (orderStates: OrderState[]): FIXME =>
   orderStates.filter(
     (state) => state !== "buyingSupplies" && state !== "producing"
-  );
+  ).map(e => e as FIXME_ELEMENT_TYPE)
