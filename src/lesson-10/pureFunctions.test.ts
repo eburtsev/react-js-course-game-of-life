@@ -25,7 +25,7 @@ test("createQs", () => {
 test("parseQs", () => {
     const qs = "?page=2&pageSize=10&total=205&somethingElse=value";
 
-    expect(parseQs(qs)).toBe({
+    expect(parseQs(qs)).toStrictEqual({ // toStrictEqual used to avoid issue https://github.com/facebook/jest/issues/8475
         page: "2",
         pageSize: "10",
         total: "205",
