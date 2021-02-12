@@ -1,4 +1,4 @@
-import { OriginalTeam, ExpectedTeam } from "./immutability";
+import { ExpectedTeam, originalArrayToExpectedArray, OriginalTeam, originalTeamToExpectedTeam, originalTeamToExpectedTeam2, Team } from "./immutability";
 
 // Задание 1
 test("team to team", () => {
@@ -14,7 +14,7 @@ test("team to team", () => {
         roster: 25,
     };
 
-    expect(originalTeamToExpectedTeam(originalTeam)).toBe(expectedTeam);
+    expect(originalTeamToExpectedTeam(originalTeam)).toStrictEqual(expectedTeam); // toStrictEqual used to avoid issue https://github.com/facebook/jest/issues/8475
 });
 
 // Задание 2
@@ -23,12 +23,12 @@ test("array to array", () => {
 
     const expectedArray = ["two", 3, 4, 5];
 
-    expect(originalArrayToExpectedArray(originalArray)).toBe(expectedArray);
+    expect(originalArrayToExpectedArray(originalArray)).toStrictEqual(expectedArray); // toStrictEqual used to avoid issue https://github.com/facebook/jest/issues/8475
 });
 
 // Задание 3
 test("team to team deep", () => {
-    const originalTeam = Object.freeze({
+    const originalTeam: Team = Object.freeze({
         name: "Tampa Bay Roosters",
         captain: {
             name: "Bryan Downey",
@@ -44,5 +44,5 @@ test("team to team deep", () => {
         },
     };
 
-    expect(originalTeamToExpectedTeam(originalTeam)).toBe(expectedTeam);
+    expect(originalTeamToExpectedTeam2(originalTeam)).toStrictEqual(expectedTeam); // toStrictEqual used to avoid issue https://github.com/facebook/jest/issues/8475
 });
