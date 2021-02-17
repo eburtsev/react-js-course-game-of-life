@@ -6,8 +6,8 @@
     "scripts": {
         "start": "webpack serve --mode development --hot",
         "build": "webpack --mode production",
-        "lint": "npx eslint --ext .js,.jsx,.ts,.tsx,.json --fix ./src *.json ./.jest ./.storybook",
-        "test": "npx jest",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json --fix ./src *.json *.js ./.jest ./.storybook",
+        "test": "jest",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "loki:update": "build-storybook && npx loki update --requireReference --reactUri file:./storybook-static",

@@ -12,11 +12,12 @@ interface FieldState {
 
 export class Field extends Component<Props, FieldState> {
     state: Readonly<FieldState> = {
-        field: Array.from({ length: this.props.height }, () => Array.from({ length: this.props.width }, () => false)),
+        field: Array(this.props.height).fill(Array(this.props.width).fill(false)),
     };
 
     private handleClick = (x, y) => {
-        const field: boolean[][] = this.state.field.map((row) => [...row]);
+        const field: boolean[][] = [...this.state.field];
+        field[x] = [...field[x]];
         field[x][y] = !field[x][y];
         this.setState({ field });
     };
